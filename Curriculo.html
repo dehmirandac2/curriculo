@@ -1,3 +1,10 @@
+
+<!-- Esse arquivo está com caixa alta n nome. O ideal é que tenhamos arquivos sempre 
+    nomeados em caixa baixa. Ou seja, de Curriculo, seria renomeado para currico.
+    Também é comum não usarmos acentos ou outros caracteres especiais. Caso fossem
+    dois nomes no arquivo, separaríamos por traço ou underline.
+    Ex: meu-arquivo.html ou meu_arquivo.html
+-->
 <!DOCTYPE html>
 <html>
 
@@ -6,6 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Currículo-Alexandre Martins</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- você está importante o arquivo de dentro da pasta css. Tem um arquivo na raiz do projeto,
+        que também chama stylesheet. Pelo jeito ele não é usado, então pode ser removido
+    -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">
     <script src="main.js"></script>
 </head>
@@ -15,6 +25,11 @@
         <div class="info">
             <img src="imagens/ale.jpg" class="foto-do-perfil" alt="">
             <div class="info-perfil">
+                <!-- aqui, para não ter que escrever o texto em caixa alta (maiúsculo)
+                    você poderia alterar no css. Tem uma propriedade que chama text-transform.
+                    Aí você colocaria
+                    text-transform: uppercase;
+                -->
                 <h1 class="nome">ALEXANDRE <br> MARTINS</h1>
                 <h2 class="profissao">PROGRAMADOR FULLSTACK</h2>
             </div>
@@ -24,6 +39,31 @@
                 <li>Telefone: (21) 96587-9668</li>
                 <li>Cidade: Nilópolis / RJ</li>
                 <li>E-mail: alexandremartins13rj@gmail.com</li>
+                <!-- aqui o ideal é que vc separe em duas listas. Uma lista é a de informaões
+                    e a outra de redes sociais. 
+                    Ex:
+                    
+                    <ul>
+                        <li>Telefone: (21) 96587-9668</li>
+                        <li>Cidade: Nilópolis / RJ</li>
+                        <li>E-mail: alexandremartins13rj@gmail.com</li>
+                    </ul>
+                    <ul>
+                        <li><img src="imagens/logo-facebook.png" alt="" width="30"></li>
+                        <li><img src="imagens/logo-linkedin.png" alt="" width="30"></li>
+                        <li><img src="imagens/logo-instagram.png" alt="" width="30"></li>
+                    </ul>
+
+                    Além disso, as redes sociais seriam links, certo?
+                    Por isso é necessário ter a tag a. Então ficaria assim:
+
+                    <li>
+                        <a href="">
+                            <img src="imagens/logo-facebook.png" alt="" width="30">
+                        </a>
+                    </li>
+
+                -->
                 <li><img src="imagens/logo-facebook.png" alt="" width="30">
                     <img src="imagens/logo-linkedin.png" alt="" width="30">
                     <img src="imagens/logo-instagram.png" alt="" width="30"></li>
@@ -33,8 +73,17 @@
     <div class="corpo">
         <!--envolve todas as 4 seções-->
         <hr>
+        <!-- muito boa a tag semântica! É isso aí!-->
         <section class="experiencia">
             <h2>experiencia</h2>
+            <!-- você reparou que todas essas divs de experiencia tem o mesmo formato e o mesmo estilo?
+                Isso faz com que vc consiga reaproveitar a mesma classe pra todas elas. Ou seja,
+                não seria necessário colocar uma classe experiencia-1 e outra experiência-2..
+                O mesmo serve para os blocos a e b. Não precisaria ter a classe bloco-a e outra bloco-a-2.
+
+                Faz sentido?
+                Todas elas podem ter a mesma classe, já que vão ter o mesmo estilo
+            -->
             <div class="experiencia-1">
                 <div class="bloco-a">
                     <h3>Vendedor autônomo</h3>
@@ -77,6 +126,10 @@
             </div>
         </section>
         <hr>
+        <!-- mais uma vez, pensando em reaproveitar classes,
+            pense se vale a pena ter uma classe só para todas as sections. 
+            Todas são iguais em questão de layout, certo? Então podemos reaproveitá-las!
+        -->
         <section class="habilidade">
             <!--habilidades-->
             <div class="posicao-hab">
@@ -123,6 +176,23 @@
             </div>
             <div>
                 <form class="caixa-texto">
+                    <!-- aqui não seriam dois textareas. Eles são input do tipo texto.
+                        O textarea é pra informações maiores, que seria por exemplo pra uma
+                        mensagem de multiplas linhas. Então o formulário ficaria assim:
+                        
+                        <fieldset>
+                            <label>Nome:</label>
+                            <input type="text" name="nome">
+                        </fieldset>
+                        <fieldset>
+                            <label>Email:</label>
+                            <input type="text" name="email">
+                        </fieldset>
+                        <fieldset>
+                            <label>Mensagem</label>
+                            <textarea name="mensagem"></textarea>
+                        </fieldset>
+                    -->
                     <textarea id="nome">Nome.</textarea>
                     <textarea id="Contato">Contato.</textarea>
                 </form>
@@ -133,5 +203,7 @@
         Alexandre Martins - 2018 - Todos os direitos reservados.
     </footer>
 </body>
-
+<!-- cuidado com a indentação aqui. O body é filho de html, então deveria estar
+    "dentro" dele.
+-->
 </html>

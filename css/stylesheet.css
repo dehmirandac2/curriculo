@@ -16,7 +16,7 @@
     align-items: center;
     padding-bottom: 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-bottom: 20pxpx;
+    margin-bottom: 20pxpx; /* sobrou um px aqui */
     margin-left: 20px;
 }
 
@@ -60,12 +60,12 @@ body {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.1;
-   background-repeat: no-repeat;
+   background-repeat: no-repeat; /* esse atributo aqui seria usado apenas se tivesse background-image. Então, nesse caso, não precisa existir*/
    color: white;
 }
 
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; /* O h2 já é filho de body, então ele herda a fonte. Não precisaria repetí-la aqui*/
     font-size: 20px;
     padding: 5px;
 }
@@ -76,6 +76,7 @@ h3, h4 {
     margin: 2px;
 }
 
+/* cuidado com a indentação das linhas abaixo */
  header {
 background: yellow;
 padding: 20px 30px 20px 30px; /*top; right; bottom; left*/
@@ -86,6 +87,9 @@ padding: 20px 30px 20px 30px; /*top; right; bottom; left*/
      border-radius: 50%;
      border: 2px solid black;
      display: flex;
+     /* não exite essa propriedade. Tá vendo que ela fica até com cor diferente?
+        Tem justify-content ou align-items
+     */
      justify-items: flex-start;
 
  }
@@ -102,12 +106,17 @@ padding: 20px 30px 20px 30px; /*top; right; bottom; left*/
      width: 100%;
 }
 
+/* 
+    como vc repete as 3 classes, com o mesmo estilo, poderia ser uma só, certo?
+    aí lá no html, vc usaria apenas uma classe, que poderia ser chamada de experiencia, por exemplo
+*/
 .experiencia-1, .experiencia-2, .experiencia-3 {
     display: flex;
     align-items: center;
     
 }
 
+/* aqui vale a mesma coisa da repetição */
 .bloco-a, .bloco-a-2,.bloco-a-3 {
     width: 20%;
     padding: 20px;
@@ -118,6 +127,7 @@ padding: 20px 30px 20px 30px; /*top; right; bottom; left*/
     
 }
 
+/* aqui vale a mesma coisa da repetição */
 .bloco-b, .bloco-b-2, .bloco-b-3 {
     width: 100%;
     padding: 20px;
@@ -126,6 +136,7 @@ padding: 20px 30px 20px 30px; /*top; right; bottom; left*/
     background-color: green;
 }
 
+/* cuidado com a indentação das linhas abaixo */
 .experiencia {
 padding-left: 30px;
 padding: 20px;
@@ -140,6 +151,7 @@ background-color: coral;
      background-color: coral;
  }
  
+ /* ficou vazio. Pode ser removido */
  .posicao-hab {
  }
 
@@ -186,4 +198,3 @@ background-color: coral;
      padding: 20px;
      padding-left: 120%;
  }
-
